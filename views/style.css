@@ -1,0 +1,226 @@
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bd5 100%);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); /* Products shelf image */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 4px solid #00d4ff;
+            animation: bounceIn 1s ease-out;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 4em;
+            background: linear-gradient(45deg, #00d4ff, #090979, #ff6b6b, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); }
+            to { text-shadow: 4px 4px 12px rgba(0, 212, 255, 0.8); }
+        }
+        .input-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #00d4ff;
+            font-size: 1.3em;
+            font-family: 'Fredoka One', cursive;
+        }
+        input, textarea, select {
+            width: 80;
+            padding: 18px;
+            margin-bottom: 25px;
+            border: 4px solid #090979;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1.2em;
+            transition: all 0.4s;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #00d4ff;
+            outline: none;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+            transform: scale(1.03);
+        }
+        textarea {
+            height: 140px;
+            resize: vertical;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        button {
+            grid-column: 1 / -1;
+            justify-self: center;
+            background: linear-gradient(45deg, #00d4ff, #090979, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.4em;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: all 0.5s;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            font-family: 'Fredoka One', cursive;
+            text-transform: uppercase;
+        }
+        button:hover {
+            transform: translateY(-7px) scale(1.08);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff6b6b, #00d4ff, #090979);
+        }
+        .output-section {
+            margin-top: 50px;
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .output-display {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 4px solid #090979;
+        }
+        .body-section {
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #3a7bd5);
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .body-text {
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #fff;
+            white-space: pre-wrap;
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+        }
+        .circles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00d4ff, #090979);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1em;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s;
+            padding: 10px;
+        }
+        .circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+        }
+        .circle-label {
+            font-size: 1.9em;
+            margin-bottom: 5px;
+        }
+        .circle-value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .styled-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #090979, #00d4ff, #ff6b6b);
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.5s;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            border: none;
+            font-family: 'Fredoka One', cursive;
+            text-transform: uppercase;
+        }
+        .styled-button:hover {
+            transform: scale(1.15) rotate(3deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ff6b6b, #090979, #00d4ff);
+        }
+        .header-image {
+            width: 100%;
+            height: 300px;
+            background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); /* Products display image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .smart-bottle-input {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        .smart-bottle-input label {
+            font-size: 1.5em;
+            color: #ff6b6b;
+        }
+        .smart-bottle-input input {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3em;
+        }

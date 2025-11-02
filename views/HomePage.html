@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Products Generator!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="header-image"></div> -->
+        <h1>Amazing Products Generator!</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="inputText">Input Text:</label>
+                <textarea id="inputText" placeholder="e.g., Write a funny product description for smart water bottle." value="Write a funny product description for smart water bottle.">Write a funny product description for smart water bottle." value="Write a funny product description for smart water bottle.</textarea>
+            </div>
+            <div class="input-group">
+                <label for="persona">Persona:</label>
+                <input type="text" id="persona" placeholder="e.g., Serious academic" value="Serious academic">
+            </div>
+            <div class="input-group">
+                <label for="audience">Audience:</label>
+                <input type="text" id="audience" placeholder="e.g., students" value="students">
+            </div>
+            <div class="input-group">
+                <label for="length">Length (words):</label>
+                <input type="number" id="length" placeholder="e.g., 40" value="10">
+            </div>
+            <div class="input-group">
+                <label for="provider">Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="google">Google</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" placeholder="e.g., gpt-4o-mini" value="gpt-4o-mini">
+            </div>
+            <div class="input-group full-width">
+                <label for="context">Context (comma-separated):</label>
+                <input type="text" id="context" placeholder="e.g., Tracks hydration, Phone app sync, Reminders to drink" value=" Tracks hydration, Phone app sync, Reminders to drink">
+            </div>
+            <div class="input-group smart-bottle-input">
+                <label for="smartBottleMagic">Smart Bottle Magic:</label>
+                <input type="text" id="smartBottleMagic" placeholder="e.g., Smart Bottle Magic Awaits!" value="Smart Bottle Magic Awaits!">
+            </div>
+            <button onclick="CallAPI()">Generate Description</button>
+        </div>
+        
+        <div class="output-section" id="outputSection">
+            <h2 id="outputTitle" style="color: #00d4ff; font-family: 'Fredoka One', cursive; text-align: center;">Generated Content</h2>
+            <div class="output-display">
+                <div class="body-section">
+                    <span class="circle-label">Generated Body:</span>
+                    <p id="outputBody" class="body-text">hi</p>
+                </div>
+                <div class="circles-grid">
+                    <div class="circle">
+                        <div class="circle-label">Title</div>
+                        <div class="circle-value" id="outputTitleValue"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Style</div>
+                        <div class="circle-value" id="outputStyle"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Citations</div>
+                        <div class="circle-value" id="outputCitations"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Moderation Flags</div>
+                        <div class="circle-value" id="outputModeration"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Prompt Tokens</div>
+                        <div class="circle-value" id="outputPromptTokens"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Completion Tokens</div>
+                        <div class="circle-value" id="outputCompletionTokens"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Latency (ms)</div>
+                        <div class="circle-value" id="outputLatency"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="circle-label">Cost Estimate</div>
+                        <div class="circle-value" id="outputCost"></div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="styled-button" onclick="copyBody()">Copy Body</button>
+                    <button class="styled-button" onclick="resetForm()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateDescription(output) {
+            
+            // Display outputs
+            document.getElementById('outputTitleValue').textContent = output.title;
+            document.getElementById('outputBody').textContent = output.body;
+            document.getElementById('outputStyle').textContent = output.style;
+            document.getElementById('outputCitations').textContent = output.citations.length > 0 ? output.citations.join(', ') : 'None';
+            document.getElementById('outputModeration').textContent = output.moderation_flags || 'None';
+            document.getElementById('outputPromptTokens').textContent = output.tokens.prompt;
+            document.getElementById('outputCompletionTokens').textContent = output.tokens.completion;
+            document.getElementById('outputLatency').textContent = output.latency_ms;
+            document.getElementById('outputCost').textContent = '$' + output.cost_est.toFixed(4);
+
+            document.getElementById('outputSection').style.display = 'block'; // Show output section
+        }
+
+        function copyBody() {
+            const text = document.getElementById('outputBody').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Body copied to clipboard!');
+            });
+        }
+
+        function resetForm() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('persona').value = '';
+            document.getElementById('audience').value = '';
+            document.getElementById('length').value = '';
+            document.getElementById('provider').value = 'openai';
+            document.getElementById('model').value = '';
+            document.getElementById('context').value = '';
+            document.getElementById('smartBottleMagic').value = 'Smart Bottle Magic Awaits!';
+            document.getElementById('outputSection').style.display = 'none'; // Hide output section
+        }
+
+    </script>
+    <script src="source.js"></script>
+</body>
+</html>
