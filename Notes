@@ -1,0 +1,142 @@
+
+*****************witty_marketer Persona
+Input:
+ {
+    "inputText": "Write a funny product description for smart water bottle.",
+    "persona": "witty_marketer",
+    "audience": "students",
+    "length": 60,
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "context": ["Tracks hydration", "Phone app sync", "Reminders to drink"]
+  }
+
+Output:
+{
+    "title": "Generated Content",
+    "body": "**Introducing the Hydration Nation’s Ultimate Sidekick: The Aquabuddysaurus Rex! 🌊🦖**\n\nAre you tired of blending into the dusty landscape of dehydration? Are your plants thriving better than you because you can’t remember the last time you guzzled a glass of water",
+    "style": "witty_marketer",
+    "citations": [],
+    "moderation_flags": "",
+    "tokens": {
+        "prompt": 44,
+        "completion": 60
+    },
+    "latency_ms": 1711,
+    "cost_est": 0.0031
+}
+
+------------------------------------------------------------------------------
+what if we reduce the length to 40
+{
+    "title": "Generated Content",
+    "body": "🚰💧 Meet the \"Hydro-Genie\" – your new hydration sidekick! 💧🚰 \n\nAre you tired of feeling like a dried-up sponge in a desert? Ever",
+    "style": "witty_marketer",
+    "citations": [],
+    "moderation_flags": "",
+    "tokens": {
+        "prompt": 44,
+        "completion": 40
+    },
+    "latency_ms": 1353,
+    "cost_est": 0.0031
+}
+
+----------------- 
+what if we change the audience to developers with length 40
+{
+    "title": "Generated Content",
+    "body": "Introducing the Hydration Overlord 3000: The Smart Water Bottle That Knows You Better Than Your Ex! \n\nAre you tired of that nagging feeling that you should be drinking more water...",
+    "style": "witty_marketer",
+    "citations": [],
+    "moderation_flags": "",
+    "tokens": {
+        "prompt": 44,
+        "completion": 40
+    },
+    "latency_ms": 1465,
+    "cost_est": 0.0031
+}
+------------------------------------------------------------------------------------------
+**************  Serious academic
+input
+ {
+    "inputText": "Write a funny product description for smart water bottle.",
+    "persona": "Serious academic",
+    "audience": "students",
+    "length": 40,
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "context": ["Tracks hydration", "Phone app sync", "Reminders to drink"]
+  }
+
+  Output
+  {
+    "title": "Generated Content",
+    "body": "**Introducing: The Hydration Nation – Your Smart Water Bottle!**\n\nTired of accidentally turning into a desert cactus? Fear not! Meet the Hydration Nation, the smart water bottle that tracks your",
+    "style": "Serious academic",
+    "citations": [],
+    "moderation_flags": "",
+    "tokens": {
+        "prompt": 43,
+        "completion": 40
+    },
+    "latency_ms": 1558,
+    "cost_est": 0.0031
+}
+
+------------------------------------------------------------------------------------------
+**************  Friendly customer service agent
+input
+ {
+    "inputText": "Write a funny product description for smart water bottle.",
+    "persona": "Friendly customer service agent",
+    "audience": "students",
+    "length": 40,
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "context": ["Tracks hydration", "Phone app sync", "Reminders to drink"]
+  }
+
+output:
+{
+    "title": "Generated Content",
+    "body": "Introducing the HydroMatic 3000 – the smart water bottle that’s so advanced, it might just start giving you life advice! Tired of forgetting to hydrate during those long hours of studying,",
+    "style": "Friendly customer service agent",
+    "citations": [],
+    "moderation_flags": "",
+    "tokens": {
+        "prompt": 45,
+        "completion": 40
+    },
+    "latency_ms": 1138,
+    "cost_est": 0.0031
+}
+
+------------------------------------------------------------------------------------------
+**************  Gen Z influencer
+input
+ {
+    "inputText": "Write a funny product description for smart water bottle.",
+    "persona": "Gen Z influencer",
+    "audience": "students",
+    "length": 40,
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "context": ["Tracks hydration", "Phone app sync", "Reminders to drink"]
+  }
+
+output
+{
+    "title": "Generated Content",
+    "body": "🎉💧 **Introducing: The Hydration Hero 3000 - Your New Bestie in H2O!** 💧🎉 \n\nTired of being that friend who constantly says,",
+    "style": "Gen Z influencer",
+    "citations": [],
+    "moderation_flags": "",
+    "tokens": {
+        "prompt": 44,
+        "completion": 40
+    },
+    "latency_ms": 1404,
+    "cost_est": 0.0031
+}
