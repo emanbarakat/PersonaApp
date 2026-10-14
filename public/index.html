@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Persona Content Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>LLM Persona Content Generator</h1>
+
+        <div class="input-section">
+            <div class="input-group full-width">
+                <label for="inputText">Input Text:</label>
+                <textarea id="inputText" placeholder="e.g., Write a funny product description for a smart water bottle.">Write a funny product description for a smart water bottle.</textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="persona">Persona:</label>
+                <input type="text" id="persona" placeholder="e.g., Serious academic" value="Serious academic">
+            </div>
+
+            <div class="input-group">
+                <label for="audience">Audience:</label>
+                <input type="text" id="audience" placeholder="e.g., students" value="students">
+            </div>
+
+            <div class="input-group">
+                <label for="length">Max Output Tokens:</label>
+                <input type="number" id="length" min="1" value="60">
+            </div>
+
+            <div class="input-group">
+                <label for="provider">Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" placeholder="e.g., gpt-4o-mini" value="gpt-4o-mini">
+            </div>
+
+            <div class="input-group full-width">
+                <label for="context">Context (comma-separated):</label>
+                <input type="text" id="context" placeholder="e.g., Tracks hydration, Phone app sync, Reminders to drink" value="Tracks hydration, Phone app sync, Reminders to drink">
+            </div>
+
+            <button id="generateButton" type="button">Generate Description</button>
+        </div>
+
+        <div class="output-section" id="outputSection">
+            <h2 id="outputTitle">Generated Content</h2>
+
+            <div class="output-display">
+                <div class="body-section">
+                    <span class="circle-label">Generated Body:</span>
+                    <p id="outputBody" class="body-text"></p>
+                </div>
+
+                <div class="circles-grid">
+                    <div class="circle"><div class="circle-label">Title</div><div class="circle-value" id="outputTitleValue"></div></div>
+                    <div class="circle"><div class="circle-label">Style</div><div class="circle-value" id="outputStyle"></div></div>
+                    <div class="circle"><div class="circle-label">Citations</div><div class="circle-value" id="outputCitations"></div></div>
+                    <div class="circle"><div class="circle-label">Moderation Flags</div><div class="circle-value" id="outputModeration"></div></div>
+                    <div class="circle"><div class="circle-label">Prompt Tokens</div><div class="circle-value" id="outputPromptTokens"></div></div>
+                    <div class="circle"><div class="circle-label">Completion Tokens</div><div class="circle-value" id="outputCompletionTokens"></div></div>
+                    <div class="circle"><div class="circle-label">Latency (ms)</div><div class="circle-value" id="outputLatency"></div></div>
+                    <div class="circle"><div class="circle-label">Cost Estimate</div><div class="circle-value" id="outputCost"></div></div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="styled-button" id="copyButton" type="button">Copy Body</button>
+                    <button class="styled-button" id="resetButton" type="button">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="source.js"></script>
+</body>
+</html>
