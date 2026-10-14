@@ -1,14 +1,21 @@
 {
-  "name": "personaops",
+  "name": "llm-persona-content-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Node.js and Express application for experimenting with persona-based LLM content generation using the OpenAI API.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "llm",
+    "generative-ai",
+    "openai",
+    "prompt-engineering",
+    "nodejs",
+    "express"
+  ],
+  "author": "Eman Barakat",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
