@@ -2,10 +2,10 @@
   "name": "llm-persona-content-generator",
   "version": "1.0.0",
   "description": "A Node.js and Express application for experimenting with persona-based LLM content generation using the OpenAI API.",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "llm",
