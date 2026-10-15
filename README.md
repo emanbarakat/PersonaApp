@@ -1,6 +1,6 @@
 # LLM Persona Content Generator
 
-A small full-stack generative AI project that explores how persona, audience, context, model choice, and output length affect LLM-generated content.
+A small generative-AI learning project that explores how persona, audience, context, model choice, and output length affect LLM-generated content.
 
 The application uses a Node.js/Express backend to send structured prompts to the OpenAI API and a lightweight browser UI to experiment with different prompt configurations.
 
@@ -19,7 +19,7 @@ The application uses a Node.js/Express backend to send structured prompts to the
 ## Project Structure
 
 ```text
-PersonaApp/
+llm-persona-content-generator/
 ├── src/
 │   ├── app.js
 │   ├── server.js
@@ -73,8 +73,8 @@ The service layer builds a system message and combines it with the user request 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/emanbarakat/PersonaApp.git
-cd PersonaApp
+git clone https://github.com/emanbarakat/llm-persona-content-generator.git
+cd llm-persona-content-generator
 ```
 
 ### 2. Install dependencies
@@ -136,5 +136,3 @@ The backend currently uses OpenAI for generation. The codebase is structured so 
 ## Author
 
 **Eman Barakat**
-
-AI & Software Development | LLMs | Generative AI
