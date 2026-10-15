@@ -124,6 +124,8 @@ A simple health-check endpoint is available at `GET /health`.
 
 The backend currently uses OpenAI for generation. The codebase is structured so additional providers and evaluation features can be added later.
 
+The portfolio refactor was based on static code inspection; the application was not rerun as part of that cleanup.
+
 ## Possible Next Improvements
 
 - Add response evaluation and quality scoring
